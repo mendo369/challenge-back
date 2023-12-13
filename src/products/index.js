@@ -1,11 +1,11 @@
 const express = require("express");
 
-const { RifasController } = require("./controllers");
+const { ProductsController } = require("./controller");
 
 const router = express.Router();
 
 module.exports.Products = (app) => {
-  router.get("/", RifasController.get);
+  router.get("/", ProductsController.getAvailables);
 
-  app.use("/api/products", router);
+  app.use("/products", router);
 };

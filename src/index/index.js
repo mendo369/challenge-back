@@ -4,7 +4,8 @@ module.exports.Index = (app) => {
   const router = express.Router();
   router.get("/", (req, res) => {
     const menu = {
-      products: `https://${req.headers.host}/api/products`,
+      products: `https://${req.headers.host}/products`,
+      prices: `https://${req.headers.host}/price/6578d0f3a7efaa2d4961a992/campus`,
     };
     res.status(200).json(menu);
   });
@@ -14,8 +15,7 @@ module.exports.Index = (app) => {
 module.exports.NotFound = (app) => {
   const router = express.Router();
   router.all("*", (req, res) => {
-    // Response.error(res, new createError.NotFound());
     res.status(404).json({ error: "Not found" });
-  }); //all recibe cualquier verbo en la url
+  });
   app.use("/", router);
 };

@@ -4,7 +4,10 @@ const { config } = require("../config/config");
 const dbConnect = () => {
   const DB_URI = config.uri_db;
   mongoose
-    .connect(DB_URI)
+    .connect(DB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then((res) => console.log("Conexión exitosa"))
     .catch((err) => console.log(err));
 };
