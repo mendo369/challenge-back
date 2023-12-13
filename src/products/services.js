@@ -7,7 +7,6 @@ module.exports.ProductsServices = {
 
       return products;
     } catch (error) {
-      console.warn(error);
       return [];
     }
   },

@@ -4,8 +4,8 @@ module.exports.Index = (app) => {
   const router = express.Router();
   router.get("/", (req, res) => {
     const menu = {
-      products: `https://${req.headers.host}/products`,
-      prices: `https://${req.headers.host}/price/6578d0f3a7efaa2d4961a992/campus`,
+      products: `http://${req.headers.host}/products`,
+      prices: `http://${req.headers.host}/price/6578d0f3a7efaa2d4961a992/campus`,
     };
     res.status(200).json(menu);
   });
